@@ -4,3 +4,4 @@
 }
 .small-title:after{background-color:#841d71;height:2px;width:40px;margin-left:15px;content:"";display:inline-block;vertical-align:middle;margin-right:15px}
 .lh-38 {line-height: 38px;}
+.text-justify { text-align:justify;}
