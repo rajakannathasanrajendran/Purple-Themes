@@ -1,0 +1,40 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Righteous&display=swap');
+:root {
+  --jost: "Jost", serif;
+  --outfit: "Outfit", serif;
+  --lexend: "Lexend", serif;
+  --capriola: "Capriola", serif;
+  --Righteous: "Righteous", sans-serif;
+  --primary-color: #FD5D69;
+  /* --primary-color: #f29b97; */
+  --secondary-color: #5DB996;
+  --secondary-color: #4ca36d;
+  --secondary-color: #45a168;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #808080;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--lexend) !important;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.space-5{
+  padding: 4px;
+}
