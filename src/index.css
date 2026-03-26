@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --jost: "Jost", serif;
+  --outfit: "Outfit", serif;
+  --lexend: "Lexend", serif;
+  --capriola: "Capriola", serif;
+  /* --primary-color: #0471b9; */
+  --primary-color: #FD5D69;
+  /* --secondary-color: #e5007f; */
+  --secondary-color: #5DB996;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-family: var(--lexend);
+}
+
+a {
+  text-decoration: none !important;
+}
