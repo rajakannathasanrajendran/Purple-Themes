@@ -1,0 +1,1339 @@
+.eb5-program-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Hero Section */
+.eb5-hero {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  padding: 12rem 2rem 6rem;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.eb5-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 1000px 800px at top center, rgba(0, 0, 0, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 800px 600px at bottom right, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.eb5-hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.eb5-hero-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Text Content */
+.eb5-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.eb5-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(200, 146, 66, 0.3);
+  border-radius: 50px;
+  padding: 0.5rem 1.25rem;
+  margin-top: 100px;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+}
+
+.eb5-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #c89242;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+.eb5-badge-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.eb5-hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  width: 447px;
+  height: 100px;
+}
+
+.eb5-hero-heading-white {
+  font-family: 'Alegreya SC', serif;
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 50px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.eb5-hero-heading-gold {
+  font-family: 'Alegreya SC', serif;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 50px;
+  letter-spacing: 0%;
+  color: #c89242;
+  text-transform: uppercase;
+}
+
+.eb5-hero-description {
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0;
+}
+
+.eb5-cta-button {
+  width: fit-content;
+  background: #c89242;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.eb5-cta-button:hover {
+  background: #d8a10f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 146, 66, 0.3);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .eb5-hero {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .eb5-hero-left {
+    max-width: 100%;
+  }
+
+  .eb5-hero-heading {
+    width: 100%;
+    height: auto;
+  }
+
+  .eb5-hero-heading-white,
+  .eb5-hero-heading-gold {
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: clamp(38px, 5.2vw, 50px);
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-hero {
+    padding: 6rem 1rem 3rem;
+    min-height: calc(100vh - 150px);
+  }
+
+  .eb5-hero-left {
+    gap: 1.5rem;
+  }
+
+  .eb5-badge {
+    padding: 0.4rem 1rem;
+  }
+
+  .eb5-badge-text {
+    font-size: 12px;
+  }
+
+  .eb5-cta-button {
+    padding: 0.875rem 2rem;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .eb5-hero-heading-white,
+  .eb5-hero-heading-gold {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .eb5-hero-description {
+    font-size: 14px;
+  }
+}
+
+/* About SSV Hospitality Group Section */
+.eb5-about-ssv {
+  width: 100%;
+  background: #000000;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-about-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.eb5-about-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  background-image: url('../../assets/eb5-program/text-style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.eb5-about-content {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.eb5-about-paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  text-align: justify;
+}
+
+.eb5-about-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+.eb5-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.eb5-brand-item {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.eb5-brand-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive for About Section */
+@media (max-width: 992px) {
+  .eb5-about-ssv {
+    padding: 4rem 1.5rem;
+  }
+
+  .eb5-brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-about-ssv {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-about-title {
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .eb5-about-content {
+    margin-bottom: 3rem;
+  }
+
+  .eb5-about-paragraph {
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .eb5-brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .eb5-brands-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 300px;
+  }
+
+  .eb5-brand-item {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+/* Our Expert Legal Team Section */
+.eb5-legal-team {
+  width: 100%;
+  background: #0b0b0b;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-legal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-legal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Side - Text Content */
+.eb5-legal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  order: 1;
+}
+
+/* Right Side - Image */
+.eb5-legal-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  order: 2;
+}
+
+.eb5-legal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.eb5-legal-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #c89242;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.eb5-legal-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  background-image: url('../../assets/eb5-program/text-style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.eb5-legal-paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  margin: 0;
+}
+
+.eb5-legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eb5-legal-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(15px, 1.7vw, 17px);
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.eb5-checkmark {
+  color: #c89242;
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #c89242;
+  position: relative;
+}
+
+.eb5-checkmark::before {
+  content: '✓';
+  position: absolute;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* Responsive for Legal Team Section */
+@media (max-width: 992px) {
+  .eb5-legal-team {
+    padding: 4rem 1.5rem;
+  }
+
+  .eb5-legal-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .eb5-legal-text {
+    order: 2;
+  }
+
+  .eb5-legal-image-wrapper {
+    order: 1;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-legal-team {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-legal-content {
+    gap: 2rem;
+  }
+
+  .eb5-legal-text {
+    gap: 1.5rem;
+  }
+
+  .eb5-legal-list {
+    gap: 1rem;
+  }
+}
+
+/* A Green Card For Your Family Section */
+.eb5-green-card {
+  width: 100%;
+  background: #000000;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-green-card-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-green-card-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.eb5-green-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  background-image: url('../../assets/eb5-program/text-style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.eb5-green-card-intro {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.eb5-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eb5-benefit-box {
+  background: #ffffff;
+  border: 2px solid #c89242;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 300px;
+}
+
+.eb5-benefit-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eb5-benefit-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.eb5-benefit-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  color: #c89242;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.eb5-benefit-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  color: #000000;
+  margin: 0;
+}
+
+/* Responsive for Green Card Section */
+@media (max-width: 992px) {
+  .eb5-green-card {
+    padding: 4rem 1.5rem;
+  }
+
+  .eb5-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+  }
+
+  .eb5-benefit-box {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-green-card {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-green-card-title {
+    margin-bottom: 2rem;
+  }
+
+  .eb5-green-card-intro {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  .eb5-benefit-box {
+    padding: 1.5rem;
+  }
+}
+
+/* Seize The Opportunity Section */
+.eb5-seize-opportunity {
+  width: 100%;
+  background: #000000;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-seize-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-seize-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.eb5-seize-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  max-width: 500px;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, #c89242 20%, #c89242 80%, transparent 100%);
+}
+
+.eb5-seize-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.eb5-seize-paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: justify;
+  margin: 0 0 1.5rem 0;
+}
+
+.eb5-seize-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Responsive for Seize Opportunity Section */
+@media (max-width: 992px) {
+  .eb5-seize-opportunity {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-seize-opportunity {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-seize-title {
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .eb5-seize-paragraph {
+    text-align: left;
+    font-size: 15px;
+  }
+}
+
+/* Advantages of Partnering with SSV Group Section */
+.eb5-advantages {
+  width: 100%;
+  background: #1a1a1a;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-advantages-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-advantages-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 2rem 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.eb5-advantages-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  background-image: url('../../assets/eb5-program/text-style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.eb5-advantages-intro {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.eb5-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.eb5-advantage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.eb5-advantage-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 249, 249, 0.3) -32.95deg, rgba(64, 64, 64, 0.5) 10.52deg, rgba(64, 64, 64, 0.35) 32.12deg, rgba(255, 255, 255, 0.3) 60.28deg, rgba(255, 255, 255, 0.3) 107.79deg, rgba(64, 64, 64, 0.35) 187.59deg, rgba(249, 249, 249, 0.5) 207.58deg, rgba(255, 255, 255, 0.3) 287.31deg, rgba(249, 249, 249, 0.3) 327.05deg, rgba(64, 64, 64, 0.5) 370.52deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.eb5-advantage-item > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eb5-advantage-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.eb5-advantage-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c89242;
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.eb5-advantage-icon i {
+  color: #c89242;
+}
+
+.eb5-advantage-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.eb5-advantage-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  color: #ffffff;
+  margin: 0;
+}
+
+.eb5-advantage-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.eb5-advantage-item-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.eb5-advantage-item-bottom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 249, 249, 0.3) -32.95deg, rgba(64, 64, 64, 0.5) 10.52deg, rgba(64, 64, 64, 0.35) 32.12deg, rgba(255, 255, 255, 0.3) 60.28deg, rgba(255, 255, 255, 0.3) 107.79deg, rgba(64, 64, 64, 0.35) 187.59deg, rgba(249, 249, 249, 0.5) 207.58deg, rgba(255, 255, 255, 0.3) 287.31deg, rgba(249, 249, 249, 0.3) 327.05deg, rgba(64, 64, 64, 0.5) 370.52deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.eb5-advantage-item-bottom > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eb5-advantage-item-bottom:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Responsive for Advantages Section */
+@media (max-width: 992px) {
+  .eb5-advantages {
+    padding: 4rem 1.5rem;
+  }
+
+  .eb5-advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-advantages {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-advantages-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .eb5-advantages-intro {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  .eb5-advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .eb5-advantage-item {
+    padding: 1rem;
+  }
+
+  .eb5-advantage-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+/* Why SSV Stands Out Section */
+.eb5-why-ssv {
+  width: 100%;
+  background: #000000;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-why-ssv-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-why-ssv-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 2rem 0;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.eb5-why-ssv-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  background-image: url('../../assets/eb5-program/text-style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.eb5-why-ssv-intro {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.eb5-comparison-table {
+  width: 100%;
+  margin-bottom: 3rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+}
+
+.eb5-table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2rem 1fr;
+  gap: 0;
+}
+
+.eb5-table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2rem 1fr;
+  gap: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.eb5-table-row:hover {
+  box-shadow: 0 0 25px rgba(200, 146, 66, 0.5);
+  z-index: 1;
+  transform: scale(1.01);
+}
+
+.eb5-table-row:hover .eb5-table-cell {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.eb5-table-row:hover .eb5-table-cell-comparison {
+  background: rgba(64, 64, 64, 0.8);
+  box-shadow: 0 0 10px rgba(64, 64, 64, 0.5);
+}
+
+.eb5-table-row:hover .eb5-table-cell-other {
+  background: linear-gradient(135deg, rgba(64, 64, 64, 0.9) 0%, rgba(64, 64, 64, 0.7) 50%, rgba(64, 64, 64, 0.9) 100%);
+  box-shadow: 0 0 10px rgba(64, 64, 64, 0.5);
+}
+
+.eb5-table-row:hover .eb5-table-cell-ssv {
+  background: rgba(200, 146, 66, 0.5);
+  box-shadow: 0 0 20px rgba(200, 146, 66, 0.7);
+}
+
+.eb5-table-cell {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(13px, 1.4vw, 15px);
+  line-height: 1.6;
+  color: #ffffff;
+  padding: 1.5rem 1.25rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-height: 80px;
+}
+
+.eb5-table-cell-comparison {
+  background: rgba(64, 64, 64, 0.5);
+  font-weight: 600;
+}
+
+.eb5-table-cell-other {
+  background: linear-gradient(135deg, rgba(64, 64, 64, 0.6) 0%, rgba(64, 64, 64, 0.4) 50%, rgba(64, 64, 64, 0.6) 100%);
+}
+
+.eb5-table-cell-ssv {
+  background: rgba(200, 146, 66, 0.3);
+}
+
+.eb5-table-header .eb5-table-cell {
+  font-weight: 700;
+  font-size: clamp(14px, 1.6vw, 16px);
+  text-align: center;
+  justify-content: center;
+  padding: 1.75rem 1.25rem;
+  min-height: 60px;
+}
+
+.eb5-table-header .eb5-table-cell-comparison {
+  background: rgba(64, 64, 64, 0.7);
+}
+
+.eb5-table-header .eb5-table-cell-other {
+  background: linear-gradient(135deg, rgba(64, 64, 64, 0.8) 0%, rgba(64, 64, 64, 0.6) 50%, rgba(64, 64, 64, 0.8) 100%);
+}
+
+.eb5-table-header .eb5-table-cell-ssv {
+  background: rgba(200, 146, 66, 0.5);
+}
+
+.eb5-icon-red {
+  color: #ff4444;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.eb5-icon-green {
+  color: #44ff44;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.eb5-table-gap {
+  background: transparent;
+  width: 2rem;
+}
+
+.eb5-why-ssv-conclusion {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: #ffffff;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Responsive for Why SSV Section */
+@media (max-width: 992px) {
+  .eb5-why-ssv {
+    padding: 4rem 1.5rem;
+  }
+
+  .eb5-comparison-table {
+    border-radius: 15px;
+  }
+
+  .eb5-table-header,
+  .eb5-table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .eb5-table-gap {
+    display: none;
+  }
+
+  .eb5-table-cell {
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  .eb5-table-row:first-of-type .eb5-table-cell:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .eb5-table-row:last-of-type .eb5-table-cell:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-why-ssv {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-why-ssv-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .eb5-why-ssv-intro {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .eb5-why-ssv-conclusion {
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .eb5-table-cell {
+    font-size: 12px;
+    padding: 0.875rem;
+  }
+
+  .eb5-comparison-table {
+    border-radius: 12px;
+  }
+}
+
+/* Frequently Asked Questions Section */
+.eb5-faq {
+  width: 100%;
+  background: #ffffff;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.eb5-faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eb5-faq-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.eb5-faq-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(to right, transparent 0%, #c89242 20%, #c89242 80%, transparent 100%);
+}
+
+.eb5-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eb5-faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(200, 146, 66, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eb5-faq-item:hover {
+  background: #f9f9f9;
+  border-color: rgba(200, 146, 66, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.eb5-faq-item.open {
+  background: #f9f9f9;
+  border-color: rgba(200, 146, 66, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.eb5-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(15px, 1.7vw, 17px);
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+.eb5-faq-question span {
+  flex: 1;
+}
+
+.eb5-faq-chevron {
+  color: #c89242;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.eb5-faq-chevron.open {
+  transform: rotate(180deg);
+}
+
+.eb5-faq-answer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.eb5-faq-answer p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 0;
+  text-transform: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for FAQ Section */
+@media (max-width: 992px) {
+  .eb5-faq {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eb5-faq {
+    padding: 3rem 1rem;
+  }
+
+  .eb5-faq-title {
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .eb5-faq-item {
+    padding: 1.25rem;
+  }
+
+  .eb5-faq-question {
+    font-size: 14px;
+  }
+
+  .eb5-faq-answer p {
+    font-size: 13px;
+  }
+}

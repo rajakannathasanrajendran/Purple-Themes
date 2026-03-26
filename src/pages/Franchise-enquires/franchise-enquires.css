@@ -1,0 +1,660 @@
+.franchise-enquires {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.franchise-hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../assets/franchise-enquires/franchise-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 750px 850px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 750px 850px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 950px 500px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.franchise-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .franchise-hero::before {
+    background:
+      radial-gradient(ellipse 400px 500px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 400px 500px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 400px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  }
+  .franchise-hero {
+    min-height: 72vh;
+  }
+
+}
+
+.franchise-enquires-content {
+  flex: 1;
+  padding: 4rem 2rem;
+  background: #0b0b0b;
+}
+
+.franchise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main Heading */
+.franchise-main-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 3rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.franchise-main-heading::after {
+  content: '';
+  display: block;
+  width: min(680px, 90%);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.5rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+/* Two Column Layout */
+.franchise-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Contact Details Section */
+.franchise-contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.franchise-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.franchise-section-subtitle {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.franchise-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.franchise-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.franchise-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: #c89242;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.franchise-icon {
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+}
+
+.franchise-contact-text {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: #ffffff;
+}
+
+.franchise-style-line {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.franchise-style-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+.franchise-description {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 1rem 0 0;
+}
+
+/* Form Section */
+.franchise-form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.franchise-form-card {
+  background-color: #282828;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.franchise-form-card .franchise-section-title {
+  margin: 0;
+}
+
+.franchise-form-card .franchise-section-subtitle {
+  margin: 0;
+}
+
+.franchise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 0;
+}
+
+.franchise-form-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.franchise-input-icon {
+  color: #c89242;
+  flex-shrink: 0;
+  position: absolute;
+  left: 1rem;
+  z-index: 1;
+}
+
+.franchise-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(200, 146, 66, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.franchise-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.franchise-input:focus {
+  border-color: #c89242;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(200, 146, 66, 0.1);
+}
+
+.franchise-textarea {
+  resize: vertical;
+  min-height: 120px;
+  padding-top: 1rem;
+}
+
+.franchise-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #c89242;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.franchise-submit-btn:hover {
+  background-color: #d8a10f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 146, 66, 0.3);
+}
+
+.franchise-submit-btn svg {
+  color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .franchise-sections {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-enquires-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .franchise-sections {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .franchise-main-heading {
+    margin-bottom: 2rem;
+  }
+
+  .franchise-main-heading::after {
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-enquires-content {
+    padding: 2rem 1rem;
+  }
+
+  .franchise-main-heading {
+    font-size: 28px;
+    margin-bottom: 1.5rem;
+  }
+
+  .franchise-section-title {
+    font-size: 20px;
+  }
+
+  .franchise-input {
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    font-size: 14px;
+  }
+
+  .franchise-input-icon {
+    left: 0.875rem;
+    width: 18px;
+    height: 18px;
+  }
+
+  .franchise-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 14px;
+  }
+}
+
+/* Steps Section */
+.franchise-steps-section {
+  padding: 4rem 2rem;
+  background: #0b0b0b;
+}
+
+.franchise-steps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.franchise-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.franchise-step-card {
+  background-color: #f5f5f5;
+  border: 1px solid #c89242;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 400px;
+  height: 290px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.franchise-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.franchise-step-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+  flex: 1;
+  line-height: 1.2;
+}
+
+.franchise-step-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #c89242;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.franchise-step-content {
+  font-size: 14px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.franchise-steps-style-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.franchise-steps-style-image {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design for Steps */
+@media (max-width: 992px) {
+  .franchise-steps-grid {
+    gap: 1.5rem;
+  }
+
+  .franchise-step-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 290px;
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-steps-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .franchise-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    justify-items: center;
+  }
+
+  .franchise-step-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 290px;
+    padding: 2rem;
+  }
+
+  .franchise-steps-style-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-steps-section {
+    padding: 2rem 1rem;
+  }
+
+  .franchise-step-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 290px;
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .franchise-step-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .franchise-step-title {
+    font-size: 16px;
+  }
+
+  .franchise-step-content {
+    font-size: 14px;
+  }
+}
+
+/* Why Be A Part Of HBK Family Section */
+.franchise-why-section {
+  padding: 4rem 2rem;
+  background: #0b0b0b;
+}
+
+.franchise-why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.franchise-why-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.franchise-why-heading::after {
+  content: '';
+  display: block;
+  width: min(680px, 90%);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.5rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.franchise-why-intro {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.franchise-advantages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.franchise-advantage-card {
+  background-color: #282828;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.franchise-advantage-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.franchise-advantage-icon {
+  font-size: 24px;
+  color: #c89242;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.franchise-advantage-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.franchise-advantage-text {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Responsive Design for Why Section */
+@media (max-width: 992px) {
+  .franchise-advantages-grid {
+    gap: 1.25rem;
+  }
+
+  .franchise-advantage-card {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-why-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .franchise-advantages-grid {
+    gap: 1.5rem;
+  }
+
+  .franchise-why-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .franchise-advantage-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-why-section {
+    padding: 2rem 1rem;
+  }
+
+  .franchise-why-heading {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .franchise-why-heading::after {
+    height: 24px;
+  }
+
+  .franchise-why-intro {
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+
+  .franchise-advantage-card {
+    padding: 1.5rem;
+    gap: 0.875rem;
+  }
+
+  .franchise-advantage-icon {
+    font-size: 20px;
+    width: 28px;
+  }
+
+  .franchise-advantage-title {
+    font-size: 16px;
+  }
+
+  .franchise-advantage-text {
+    font-size: 14px;
+  }
+}
+

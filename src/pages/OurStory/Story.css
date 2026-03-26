@@ -1,0 +1,1466 @@
+.story-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.story-hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../assets/story/story-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 750px 850px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 750px 850px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 950px 500px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .story-hero {
+    min-height: 72vh;
+  }
+
+  .story-hero::before {
+    background:
+      radial-gradient(ellipse 400px 500px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 400px 500px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 400px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  }
+}
+
+.story-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.story-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.story-hero-title {
+  margin: 0;
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 6vw, 64px);
+  color: #f0c57a;
+  letter-spacing: 1px;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+/* Our Story Title Section */
+.story-title-section {
+  background: #0b0b0b;
+  padding: 3.5rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.story-title-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.story-title {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.story-title::after {
+  content: '';
+  display: block;
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.55rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+/* Story Content Section (below hero) */
+.story-content {
+  background: #0b0b0b;
+  padding: 2.75rem 1rem 4rem;
+}
+
+.story-content-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.25rem;
+  align-items: stretch;
+}
+
+.story-textCard {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(200, 146, 66, 0.18);
+  border-radius: 18px;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+.story-paragraph {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+  text-wrap: pretty;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.story-imageCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Tablet Responsive (992px and below) */
+@media (max-width: 992px) {
+  .story-hero {
+    min-height: 65vh;
+  }
+
+  .story-content {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .story-content-inner {
+    gap: 2rem;
+  }
+
+  .story-textCard {
+    padding: 1.35rem 1.35rem;
+  }
+
+  .story-paragraph {
+    font-size: clamp(14px, 1.8vw, 15px);
+  }
+
+  .story-title-section {
+    padding: 3rem 1rem 2.25rem;
+  }
+
+  .story-title {
+    font-size: clamp(30px, 5vw, 50px);
+  }
+
+  .legacy-section {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .legacy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Order: First card, Images, Last card */
+  .legacy-card--left {
+    order: 1;
+  }
+
+  .legacy-images-card {
+    order: 2;
+    padding: 0;
+  }
+
+  .legacy-card--right {
+    order: 3;
+  }
+
+  .legacy-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .legacy-card {
+    padding: 1.2rem 1.1rem;
+  }
+
+  .conclusion-section {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .conclusion-grid {
+    gap: 2.5rem;
+  }
+
+  .conclusion-image-wrapper {
+    width: 100%;
+    max-width: 534px;
+    height: auto;
+    aspect-ratio: 534 / 645;
+  }
+
+  .conclusion-overlay {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    max-width: 300px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .story-hero {
+    min-height: 58vh;
+  }
+
+  .story-content {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .story-content-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .story-textCard {
+    padding: 1.25rem 1.1rem;
+  }
+
+  .story-imageCard {
+    min-height: 280px;
+  }
+
+  .story-title-section {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .story-title {
+    font-size: clamp(28px, 5vw, 48px);
+  }
+
+  .story-title::after {
+    height: clamp(24px, 6vw, 36px);
+  }
+
+  .story-content {
+    padding: 2rem 0.75rem 3rem;
+  }
+
+  .story-textCard {
+    padding: 1.15rem 1rem;
+  }
+
+  .story-paragraph {
+    font-size: clamp(13px, 2vw, 14px);
+    line-height: 1.55;
+  }
+
+  .story-imageCard {
+    min-height: 250px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .story-hero {
+    min-height: 55vh;
+  }
+
+  .story-title-section {
+    padding: 2rem 0.75rem 1.75rem;
+  }
+
+  .story-content {
+    padding: 1.75rem 0.75rem 2.5rem;
+  }
+
+  .story-content-inner {
+    gap: 1.25rem;
+  }
+
+  .story-textCard {
+    padding: 1rem 0.9rem;
+  }
+
+  .story-imageCard {
+    min-height: 220px;
+  }
+
+  .legacy-section {
+    padding: 3.5rem 0.75rem 4.5rem;
+  }
+
+  .legacy-heading {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+
+  .legacy-card {
+    padding: 1rem 0.9rem;
+  }
+
+  .conclusion-section {
+    padding: 3.5rem 0.75rem 4.5rem;
+  }
+
+  .conclusion-heading {
+    font-size: clamp(22px, 5vw, 32px);
+  }
+
+  .conclusion-text {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  .conclusion-overlay-box {
+    padding: 1rem 0.9rem;
+  }
+
+  .three-column-section {
+    padding: 3.5rem 0.75rem 4.5rem;
+  }
+
+  .three-column-item {
+    padding: 0 0 2rem;
+  }
+
+  .culinary-brands-section {
+    padding: 3.5rem 0.75rem 4.5rem;
+  }
+
+  .culinary-brands-heading {
+    font-size: clamp(24px, 5vw, 34px);
+    margin-bottom: 2rem;
+  }
+
+  .amenities-section {
+    padding: 3.5rem 0.75rem 4.5rem;
+  }
+}
+
+/* A Legacy of Uncompromising Excellence Section */
+.legacy-section {
+  background: #0b0b0b;
+  padding: 5rem 1rem 6rem;
+}
+
+.legacy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* .legacy-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: #c89242;
+  opacity: 0.6;
+  z-index: 0;
+} */
+
+.legacy-header {
+  position: relative;
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.legacy-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.legacy-geometric {
+  display: none;
+}
+
+.legacy-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.legacy-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(200, 146, 66, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.legacy-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.legacy-card-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  color: #c89242;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.legacy-text {
+  margin: 0;
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.85);
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.legacy-brands-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legacy-brands-list li {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.legacy-brands-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #c89242;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.legacy-images-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.legacy-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.legacy-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  aspect-ratio: 4 / 3;
+  flex: 1;
+  width: 100%;
+}
+
+.legacy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Responsive adjustments for images */
+@media (max-width: 992px) {
+  .legacy-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .legacy-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .legacy-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .legacy-images {
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .legacy-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .legacy-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .legacy-heading {
+    font-size: clamp(18px, 3vw, 24px);
+    text-align: center;
+  }
+
+  .legacy-geometric {
+    width: 2px;
+    height: 100%;
+  }
+
+  .legacy-container::after {
+    display: none;
+  }
+
+  .legacy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Order: First card, Images, Last card */
+  .legacy-card--left {
+    order: 1;
+  }
+
+  .legacy-images-card {
+    order: 2;
+    padding: 0;
+  }
+
+  .legacy-card--right {
+    order: 3;
+  }
+
+  .legacy-card {
+    padding: 1.1rem 0.9rem;
+  }
+
+  .legacy-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .legacy-image-wrapper {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+}
+
+/* Conclusion Section */
+.conclusion-section {
+  background: #0b0b0b;
+  padding: 5rem 1rem 6rem;
+}
+
+.conclusion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Left Side - Image */
+.conclusion-image-section {
+  width: 100%;
+}
+
+.conclusion-image-wrapper {
+  position: relative;
+  width: 534px;
+  height: 645px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.conclusion-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.conclusion-overlay {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  max-width: 360px;
+  z-index: 10;
+}
+
+.conclusion-overlay-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.conclusion-premium {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.conclusion-check-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #fbbf24;
+}
+
+.conclusion-premium-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.conclusion-overlay-text {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Right Side - Content */
+.conclusion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.conclusion-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 1.5px;
+  text-align: left;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.conclusion-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 2px;
+  background-color: #c89242;
+}
+
+.conclusion-text {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.conclusion-brands-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .conclusion-content {
+    order: 2;
+  }
+
+  .conclusion-image-section {
+    order: 1;
+  }
+
+  .conclusion-heading {
+    text-align: center;
+  }
+
+  .conclusion-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .conclusion-text {
+    text-align: center;
+  }
+
+  .conclusion-overlay {
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 280px;
+  }
+
+  .conclusion-image-wrapper {
+    width: 100%;
+    max-width: 534px;
+    height: auto;
+    aspect-ratio: 534 / 645;
+  }
+}
+
+@media (max-width: 768px) {
+  .conclusion-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .conclusion-content {
+    order: 2;
+  }
+
+  .conclusion-image-section {
+    order: 1;
+  }
+
+  .conclusion-heading {
+    font-size: clamp(24px, 4vw, 36px);
+    text-align: center;
+  }
+
+  .conclusion-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .conclusion-text {
+    font-size: clamp(13px, 2vw, 15px);
+    text-align: center;
+  }
+
+  .conclusion-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 534 / 645;
+  }
+
+  .conclusion-overlay {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .conclusion-overlay-box {
+    padding: 1.2rem 1.1rem;
+    animation: none;
+  }
+
+  .conclusion-premium {
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .conclusion-check-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .conclusion-premium-text {
+    font-size: clamp(16px, 2.5vw, 20px);
+  }
+
+  .conclusion-overlay-text {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  .conclusion-brands-heading {
+    font-size: clamp(24px, 4vw, 36px);
+  }
+}
+
+/* Our Culinary Brands Section */
+.culinary-brands-section {
+  background: #0b0b0b;
+  padding: 5rem 1rem 6rem;
+}
+
+.culinary-brands-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.culinary-brands-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 3.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.culinary-brands-heading::after {
+  content: '';
+  display: block;
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.55rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.culinary-brands-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.culinary-brand-item {
+  width: 1100px;
+  max-width: 100%;
+  min-height: 320px;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 146, 66, 0.3);
+  background: rgba(15, 15, 15, 0.8);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  opacity: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  position: relative;
+  transition: height 0.3s ease;
+}
+
+.culinary-brand-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 1;
+}
+
+.culinary-brand-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.culinary-brand-logo {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.culinary-brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.culinary-brand-label {
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 600;
+  color: #c89242;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 160px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.culinary-brand-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  overflow: visible;
+}
+
+.culinary-brand-description {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.culinary-brand-description.truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.culinary-brand-description.expanded {
+  display: block;
+  overflow: visible;
+}
+
+.culinary-brand-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #c89242;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.culinary-brand-arrow:hover {
+  transform: translateY(3px);
+  background: #d8a10f;
+}
+
+.culinary-brand-arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.culinary-brand-arrow.expanded:hover {
+  transform: rotate(180deg) translateY(3px);
+}
+
+.culinary-brand-arrow svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.culinary-brand-arrow svg path {
+  stroke: #1a1a1a;
+}
+
+
+@media (max-width: 768px) {
+  .culinary-brands-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .culinary-brands-heading {
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 2.5rem;
+  }
+
+  .culinary-brand-item {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .culinary-brand-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .culinary-brand-logo-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .culinary-brand-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .culinary-brand-label {
+    max-width: 100%;
+  }
+
+  .culinary-brand-text {
+    text-align: center;
+  }
+
+  .culinary-brand-description {
+    text-align: center;
+  }
+
+  .culinary-brand-arrow {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    align-self: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Tablet - Culinary Brands */
+@media (max-width: 1200px) {
+  .culinary-brand-item {
+    width: 100%;
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .culinary-brands-section {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .culinary-brand-item {
+    height: auto;
+    min-height: 350px;
+    padding: 1.75rem 2rem;
+  }
+
+  .culinary-brand-content {
+    gap: 1.75rem;
+  }
+
+  .culinary-brand-logo-wrapper {
+    width: 160px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .culinary-brand-item {
+    padding: 1.25rem 1rem;
+    min-height: auto;
+  }
+
+  .culinary-brand-logo-wrapper {
+    width: 100%;
+  }
+
+  .culinary-brand-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .culinary-brand-description {
+    font-size: clamp(13px, 2vw, 15px);
+  }
+
+  .culinary-brand-label {
+    font-size: clamp(11px, 2vw, 13px);
+  }
+}
+
+/* Three Column Section */
+.three-column-section {
+  background: #0b0b0b;
+  padding: 5rem 1rem 6rem;
+}
+
+.three-column-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.three-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.three-column-item {
+  padding: 0 2.5rem;
+}
+
+.three-column-item:first-child {
+  padding-left: 0;
+}
+
+.three-column-item:last-child {
+  padding-right: 0;
+}
+
+/* Vertical divider lines */
+.three-column-divider {
+  background: rgba(200, 146, 66, 0.3);
+  width: 1px;
+  height: 100%;
+  min-height: 400px;
+  align-self: stretch;
+}
+
+.three-column-subsection {
+  margin-bottom: 3rem;
+}
+
+.three-column-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.three-column-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 400;
+  color: #c89242;
+  letter-spacing: 1.5px;
+  text-align: left;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.three-column-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 0.75rem 0 0;
+  background-color: #c89242;
+}
+
+.three-column-text {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Tablet - Three Column Section */
+@media (max-width: 992px) {
+  .three-column-section {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .three-column-grid {
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+  }
+
+  .three-column-grid > div:nth-child(4) {
+    display: none;
+  }
+
+  .three-column-item:nth-child(3) {
+    grid-column: 1 / -1;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(200, 146, 66, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .three-column-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .three-column-divider {
+    display: none;
+  }
+
+  .three-column-item {
+    padding: 0 0 3rem;
+    border-bottom: 1px solid rgba(200, 146, 66, 0.2);
+  }
+
+  .three-column-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .three-column-title {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 28px);
+  }
+
+  .three-column-title::after {
+    margin: 0.75rem auto 0;
+  }
+
+  .three-column-text {
+    text-align: center;
+    font-size: clamp(13px, 2vw, 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .three-column-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .three-column-item {
+    padding: 0 0 2.5rem;
+  }
+
+  .three-column-subsection {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Restaurant Amenities Section */
+.amenities-section {
+  background: #0b0b0b;
+  padding: 5rem 1rem 6rem;
+}
+
+.amenities-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.amenities-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 400;
+  color: #c89242;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin: 0 0 3rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.amenities-heading::after {
+  content: '';
+  display: block;
+  width: min(680px, 96vw);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.55rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.amenities-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.amenity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.amenity-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amenity-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.amenity-label {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 500;
+  color: #c89242;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Tablet - Amenities */
+@media (max-width: 992px) {
+  .amenities-section {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .amenities-box {
+    padding: 2.75rem 1.75rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile - Amenities */
+@media (max-width: 768px) {
+  .amenities-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .amenities-heading {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 2.5rem;
+  }
+
+  .amenities-box {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .amenity-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amenities-section {
+    padding: 3.5rem 1rem 4.5rem;
+  }
+
+  .amenities-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .amenity-icon {
+    width: 60px;
+    height: 60px;
+  }
+}

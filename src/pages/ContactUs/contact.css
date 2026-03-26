@@ -1,0 +1,637 @@
+.contact {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+/* Hero Section with Background */
+.contact-hero {
+  width: 100%;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Make sure header is above the overlay */
+.contact-hero .header {
+  position: relative;
+  z-index: 10;
+}
+
+/* Logos Section */
+.contact-logos {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  margin-top: 120px;
+}
+
+.contact-logo {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.halal-logo-img {
+  max-width: 100px;
+}
+
+.hbk-logo-img {
+  max-width: 140px;
+}
+
+.location-logo-img {
+  max-width: 110px;
+}
+
+/* Contact Content Section */
+.contact-content-section {
+  padding: 5rem 2rem 6rem;
+  width: 100%;
+  background: #0a0a0a;
+  position: relative;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   Franchise Enquiries (Contact)
+   ============================== */
+
+.contact-franchise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-franchise-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-franchise-title {
+  font-family: 'Alegreya SC', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #c89242;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-franchise-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+.contact-franchise-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.contact-franchise-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-franchise-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: #c89242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 24px rgba(200, 146, 66, 0.18);
+}
+
+.contact-franchise-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+.contact-franchise-contact-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.contact-franchise-style-line {
+  display: flex;
+  align-items: center;
+}
+
+.contact-franchise-style-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.contact-franchise-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.75rem 0 0;
+  max-width: 520px;
+}
+
+.contact-franchise-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-franchise-card {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  padding: 2.25rem;
+  background: linear-gradient(180deg, #2b2b2b 0%, #1f1f1f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-franchise-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.contact-franchise-field {
+  position: relative;
+}
+
+.contact-franchise-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  color: rgba(200, 146, 66, 0.95);
+  pointer-events: none;
+}
+
+.contact-franchise-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-franchise-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.contact-franchise-input:focus {
+  border-color: rgba(200, 146, 66, 0.75);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(200, 146, 66, 0.12);
+}
+
+.contact-franchise-textarea {
+  min-height: 190px;
+  resize: none;
+  padding-top: 0.95rem;
+}
+
+.contact-franchise-submit {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: #c89242;
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.contact-franchise-submit:hover {
+  background: #d8a10f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(200, 146, 66, 0.28);
+}
+
+.contact-franchise-submit svg {
+  color: #1a1a1a;
+}
+
+.contact-heading {
+  text-align: center;
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48.5px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #c89242;
+  margin: 0 0 3rem;
+  position: relative;
+}
+
+.contact-heading::after {
+  content: '';
+  display: block;
+  width: 680px;
+  max-width: 96%;
+  height: 44px;
+  margin: 0.55rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+/* Contact Info Grid - Map and Business Hours */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.contact-map-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.contact-map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.contact-hours-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-hours-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.contact-hours-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact-hours-title {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #c89242;
+  margin: 0;
+}
+
+.contact-hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  flex: 1;
+}
+
+.contact-hours-row {
+  border-bottom: 1px solid rgba(200, 146, 66, 0.3);
+}
+
+.contact-hours-row:last-child {
+  border-bottom: none;
+}
+
+.contact-hours-day {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  color: #1a1a1a;
+  padding: 1rem 0;
+  vertical-align: top;
+  width: 40%;
+}
+
+.contact-hours-time {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  font-style: normal;
+  color: #4a4a4a;
+  padding: 1rem 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.contact-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(200, 146, 66, 0.2);
+}
+
+.contact-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4caf50;
+  display: inline-block;
+}
+
+.contact-status-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Contact Actions */
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.contact-home-btn {
+  background: #c89200;
+  color: #1b1303;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.contact-home-btn:hover {
+  background: #d8a10f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(200, 146, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-hero {
+    min-height: 70vh;
+  }
+
+  .contact-content-section {
+    padding: 4.5rem 2rem 5.5rem;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3.5rem;
+  }
+
+  .contact-franchise-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .contact-franchise-right {
+    justify-content: flex-start;
+  }
+
+  .contact-franchise-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 60vh;
+  }
+
+  .contact-logos {
+    gap: 1.5rem;
+    margin-top: 100px;
+  }
+
+  .contact-logo {
+    max-width: 80px;
+  }
+
+  .halal-logo-img {
+    max-width: 70px;
+  }
+
+  .hbk-logo-img {
+    max-width: 100px;
+  }
+
+  .location-logo-img {
+    max-width: 80px;
+  }
+
+  .contact-content-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .contact-heading {
+    font-size: 38.8px;
+  }
+
+  .contact-info-grid {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .contact-map-container {
+    height: 400px;
+  }
+
+  .contact-hours-card {
+    padding: 2rem;
+  }
+
+  .contact-actions {
+    margin-top: 1.5rem;
+  }
+
+  .contact-franchise-grid {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero {
+    min-height: 50vh;
+  }
+
+  .contact-logos {
+    gap: 1rem;
+    margin-top: 80px;
+    padding: 1.5rem;
+  }
+
+  .contact-logo {
+    max-width: 60px;
+  }
+
+  .halal-logo-img {
+    max-width: 50px;
+  }
+
+  .hbk-logo-img {
+    max-width: 80px;
+  }
+
+  .location-logo-img {
+    max-width: 60px;
+  }
+
+  .contact-content-section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+  }
+
+  .contact-info-grid {
+    margin-top: 2rem;
+    gap: 1.25rem;
+  }
+
+  .contact-map-container {
+    height: 300px;
+  }
+
+  .contact-hours-card {
+    padding: 1.5rem;
+  }
+
+  .contact-hours-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-hours-title {
+    font-size: 18px;
+  }
+
+  .contact-hours-day {
+    font-size: 15px;
+  }
+
+  .contact-hours-time {
+    font-size: 14px;
+  }
+
+  .contact-actions {
+    margin-top: 1rem;
+  }
+
+  .contact-home-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .contact-franchise-card {
+    padding: 1.6rem;
+    border-radius: 14px;
+  }
+
+  .contact-franchise-input {
+    font-size: 14px;
+    padding: 0.9rem 0.9rem 0.9rem 2.9rem;
+  }
+
+  .contact-franchise-input-icon {
+    left: 14px;
+    top: 16px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-franchise-textarea {
+    min-height: 170px;
+  }
+}

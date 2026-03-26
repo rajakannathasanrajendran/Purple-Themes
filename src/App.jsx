@@ -1,36 +1,33 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { HelmetProvider } from "react-helmet-async";
-
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Home from './pages/Home/Home';
-import Catering from './pages/Catering/Catering';
-import Menu from './pages/Menu/Menu';
-import Franchise from './pages/Franchise/Franchise';
-import Buffet from './pages/Buffet/Buffet';
-import Blog from './pages/Blog/Blog';
+import Story from './pages/OurStory/Story';
+import Location from './pages/Location/Location';
+import EB5Program from './pages/EB5Program/EB5Program';
+import OurBrands from './pages/OurBrands/ourbrands';
+import FranchiseEnquires from './pages/Franchise-enquires/franchise-enquires';
+import EventCatering from './pages/Event-catering/event-catering';
+import Contact from './pages/ContactUs/contact';
+import Careers from './pages/Careers/Careers';
+import ScrollToTop from './components/ScrollToTop';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-
   return (
-    <Router>
+    <div className="App">
       <ScrollToTop />
-      <div className="App">
-        <HelmetProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catering" element={<Catering />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/franchise" element={<Franchise />} />
-            <Route path="/buffet" element={<Buffet />} />
-            <Route path="/blog" element={<Blog />} />
-          </Routes>
-        </HelmetProvider>
-      </div>
-    </Router>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/our-story" element={<Story />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/eb5-program" element={<EB5Program />} />
+        <Route path="/our-brands" element={<OurBrands />} />
+        <Route path="/franchise-enquires" element={<FranchiseEnquires />} />
+        <Route path="/event-catering" element={<EventCatering />} />
+        <Route path="/contact-us" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

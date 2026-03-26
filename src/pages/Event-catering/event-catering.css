@@ -1,0 +1,424 @@
+.event-catering {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.catering-hero {
+  width: 100%;
+  min-height: 72vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.catering-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 750px 850px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 750px 850px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 950px 500px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.catering-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.event-catering-content {
+  flex: 1;
+  padding: 4rem 2rem;
+  background: #0b0b0b;
+}
+
+.catering-container {
+  width: 100%;
+  max-width: 1440px; /* Increased to accommodate the card width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catering-main-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 700;
+  color: #c89242;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 0 3rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.catering-main-heading::after {
+  content: '';
+  display: block;
+  width: min(680px, 90%);
+  height: clamp(28px, 5vw, 44px);
+  margin: 0.5rem auto 0;
+  background-image: url('../../assets/home/style.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 14px rgba(200, 146, 66, 0.25));
+}
+
+.catering-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Section */
+.catering-form-section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.catering-section-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #c89242;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.catering-section-subtitle {
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.catering-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.catering-form-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.catering-input-icon {
+  color: #c89242;
+  flex-shrink: 0;
+  position: absolute;
+  left: 1rem;
+  z-index: 1;
+}
+
+.catering-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: #2d2d2d;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.catering-input::placeholder {
+  color: #888888;
+}
+
+.catering-input:focus {
+  background-color: #363636;
+  box-shadow: 0 0 0 2px rgba(200, 146, 66, 0.3);
+}
+
+.catering-form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.catering-country-code {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  padding: 0 1rem;
+  color: #888888;
+  flex-shrink: 0;
+}
+
+.mobile-group {
+  flex: 1;
+}
+
+.mobile-group .catering-input {
+  padding-left: 1rem;
+}
+
+.catering-textarea {
+  resize: vertical;
+  min-height: 120px;
+  padding-top: 1rem;
+}
+
+.catering-submit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.catering-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: #c89242;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.catering-submit-btn:hover {
+  background-color: #d8a10f;
+  transform: translateY(-2px);
+}
+
+/* Image Section */
+.catering-image-section {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Center the image vertically if height is reduced */
+  padding: 2rem; /* Add padding to reduce image size visually */
+}
+
+.catering-image-wrapper {
+  width: 100%;
+  height: 90%; /* Reduce height to 90% */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.catering-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Map and Hours Section */
+.catering-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.catering-map-card {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.catering-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.catering-hours-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catering-hours-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.catering-hours-icon {
+  color: #c89242;
+  width: 32px;
+  height: 32px;
+}
+
+.catering-hours-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #c89242;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.catering-hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.catering-hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(200, 146, 66, 0.3);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.catering-hours-row:last-child {
+  border-bottom: none;
+}
+
+.catering-day {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+.catering-time {
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.catering-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.catering-status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+}
+
+.catering-status-text {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .catering-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .catering-image-section {
+    min-height: 400px;
+    order: -1; 
+  }
+
+  .catering-info-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .catering-hero::before {
+    background:
+      radial-gradient(ellipse 400px 500px at top left, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 400px 500px at top right, rgba(0, 0, 0, 0.85) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 400px at top center, rgba(0, 0, 0, 0.9) 0%, transparent 65%);
+  }
+
+  .event-catering-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .catering-form-section {
+    padding: 2rem;
+  }
+
+  .catering-section-title {
+    font-size: 24px;
+  }
+
+  .catering-hours-card {
+    padding: 2rem;
+  }
+
+  .catering-hours-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-catering-content {
+    padding: 2rem 1rem;
+  }
+
+  .catering-form-section {
+    padding: 1.5rem;
+  }
+
+  .catering-section-title {
+    font-size: 20px;
+  }
+
+  .catering-input {
+    font-size: 14px;
+  }
+
+  .catering-form-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .catering-country-code {
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+  }
+}

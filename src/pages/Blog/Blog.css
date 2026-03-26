@@ -1,25 +1,4 @@
-.blog-page {
-    /* Add styles as needed */
+.blog {
+  /* Blog styles */
 }
 
-.blog-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/parallex/parallex-1.jpeg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-    color: white;
-    text-align: center;
-}
-
-.blog-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.blog-subtitle {
-    font-size: 1.2rem;
-}
-
-.blog-content {
-    padding: 50px 0;
-}

@@ -1,309 +1,268 @@
 import './Header.css';
-import logo from '../../assets/logo/malgudi-logo.png';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/home/hbk.png';
+import halal from '../../assets/home/halal.png';
+import location30 from '../../assets/home/30-plus.png';
 import { useState, useEffect } from 'react';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
-const Header = ({ activePage }) => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isMobileScreen, setIsMobileScreen] = useState(false);
-    const [isSticky, setIsSticky] = useState(false);
-    const [isMobileLocationDropdownOpen, setIsMobileLocationDropdownOpen] = useState(false);
-
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isAboutUsActive, setIsAboutUsActive] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Smooth scroll to section (on same page)
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        setIsMobileMenuOpen(false);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
-    // Unified click handler for both desktop & mobile
-    const handleNavClick = (sectionId) => {
-        if (location.pathname === '/') {
-            scrollToSection(sectionId);
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    // Handle About Us navigation - navigate to home and scroll to section
+    const handleAboutUsClick = (e) => {
+        e.preventDefault();
+        if (location.pathname !== '/') {
+            // Navigate to home page first
+            navigate('/#about-us');
+            // Wait for navigation to complete, then scroll
+            setTimeout(() => {
+                const aboutUsSection = document.getElementById('about-us');
+                if (aboutUsSection) {
+                    aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 200);
         } else {
-            navigate('/', { state: { scrollTo: sectionId } });
-        }
-    };
-
-    // Responsive check
-    useEffect(() => {
-        const checkScreenSize = () => {
-            const mobile = window.innerWidth <= 991;
-            setIsMobileScreen(mobile);
-            setIsMobileMenuOpen(false);
-        };
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
-
-    // Sticky header
-    useEffect(() => {
-        const handleScroll = () => setIsSticky(window.scrollY > 0);
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const toggleMobileMenu = () => isMobileScreen && setIsMobileMenuOpen(!isMobileMenuOpen);
-    const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
-    // Location URLs mapping
-    const locationUrls = {
-        'Plano': 'https://malgudigardenplano.com/',
-        'Richardson': 'https://malgudigardenrichardson.com/'
-    };
-
-    // Handle location selection
-    const handleLocationClick = (isMobileContext = false) => {
-        setIsMobileLocationDropdownOpen(false);
-        if (isMobileContext) closeMobileMenu();
-    };
-
-    // Handle menu item click
-    const handleMenuItemClick = (action, isMobile) => {
-        if (action === 'home') {
-            if (location.pathname === '/') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                navigate('/');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            // If already on home page, just scroll
+            const aboutUsSection = document.getElementById('about-us');
+            if (aboutUsSection) {
+                aboutUsSection.scrollIntoView({ behavior: 'smooth' });
             }
-        } else if (action) {
-            handleNavClick(action);
+            // Update URL hash
+            window.history.pushState(null, '', '/#about-us');
         }
-        if (isMobile) closeMobileMenu();
+        closeMenu();
     };
 
-    // Render location dropdown
-    const renderLocationDropdown = (isMobile) => {
-        const locations = ['Plano', 'Richardson'];
-        const menuClass = isMobile ? 'location-dropdown-menu-mobile' : 'location-dropdown-menu';
-        const containerClass = isMobile ? 'location-dropdown-mobile' : 'location-dropdown';
+    // Handle hash navigation and scroll to about-us section
+    useEffect(() => {
+        if (location.hash === '#about-us' && location.pathname === '/') {
+            // Small delay to ensure the page has rendered
+            setTimeout(() => {
+                const aboutUsSection = document.getElementById('about-us');
+                if (aboutUsSection) {
+                    aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+                    // Set active state after scrolling
+                    setIsAboutUsActive(true);
+                }
+            }, 200);
+        }
+    }, [location]);
 
-        if (isMobile) {
-            return (
-                <div className={containerClass}>
-                    <a
-                        href="#"
-                        className={`location-dropdown-toggle ${isMobileLocationDropdownOpen ? 'active' : ''}`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setIsMobileLocationDropdownOpen(!isMobileLocationDropdownOpen);
-                        }}
-                    >
-                        Location
-                        <i className={`fa-solid fa-chevron-${isMobileLocationDropdownOpen ? 'up' : 'down'}`}></i>
-                    </a>
-                    {isMobileLocationDropdownOpen && (
-                        <ul className={menuClass}>
-                            {locations.map((loc) => (
-                                <li key={loc}>
-                                    <a
-                                        href={locationUrls[loc]}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        onClick={() => handleLocationClick(true)}
-                                    >
-                                        {loc}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
-            );
+    // Intersection Observer to detect when about-us section is in viewport
+    useEffect(() => {
+        // Only observe if we're on the home page
+        if (location.pathname !== '/') {
+            setIsAboutUsActive(false);
+            return;
         }
 
-        return (
-            <div className={containerClass}>
-                <a href="#" className="location-dropdown-toggle">
-                    Location
-                    <i className="fa-solid fa-chevron-down"></i>
-                </a>
-                <ul className={menuClass}>
-                    {locations.map((loc) => (
-                        <li key={loc}>
-                            <a
-                                href={locationUrls[loc]}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={() => handleLocationClick(false)}
-                            >
-                                {loc}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        const aboutUsSection = document.getElementById('about-us');
+        if (!aboutUsSection) {
+            setIsAboutUsActive(false);
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Check if the section is in the viewport
+                    if (entry.isIntersecting) {
+                        setIsAboutUsActive(true);
+                    } else {
+                        // Check if we've scrolled past the section
+                        const rect = entry.boundingClientRect;
+                        // If section is above viewport (scrolled past), deactivate
+                        // If section is below viewport (not reached yet), keep inactive
+                        if (rect.top < -100) {
+                            setIsAboutUsActive(false);
+                        } else if (rect.bottom > window.innerHeight) {
+                            setIsAboutUsActive(false);
+                        }
+                    }
+                });
+            },
+            {
+                threshold: [0, 0.1, 0.3, 0.5, 0.7, 1.0], // Multiple thresholds for better detection
+                rootMargin: '-150px 0px -40% 0px' // Account for header and trigger when section is prominently visible
+            }
         );
-    };
 
-    // Menu items configuration
-    const menuItems = [
-        { id: 'home', label: 'Home', to: '/', action: 'home', useActivePage: true },
-        { id: 'about', label: 'About', to: '/', action: 'about', useActivePage: true },
-        { id: 'catering', label: 'Catering', to: '/catering', action: null, usePathname: true },
-        { id: 'menu', label: 'Menu', to: '/menu', action: null, usePathname: true },
-        { id: 'gallery', label: 'Gallery', to: '/', action: 'gallery', useActivePage: true },
-        { id: 'franchise', label: 'Franchise', to: '/franchise', action: null, usePathname: true },
-        { id: 'buffet', label: 'Buffet', to: '/buffet', action: null, usePathname: true },
-    ];
+        observer.observe(aboutUsSection);
 
-    const renderMenuItems = (isMobile = false) => (
-        <ul>
-            {menuItems.map((item) => {
-                const isActive = item.useActivePage
-                    ? activePage === item.id
-                    : item.usePathname && location.pathname === item.to;
+        return () => {
+            observer.disconnect();
+        };
+    }, [location.pathname]);
 
-                return (
-                    <li key={item.id}>
-                        {item.external ? (
-                            <a
-                                href={item.href}
-                                className={isActive ? 'active' : ''}
-                                onClick={() => {
-                                    if (isMobile) closeMobileMenu();
-                                }}
-                            >
-                                {item.label}
-                            </a>
-                        ) : (
-                            <Link
-                                to={item.to}
-                                className={isActive ? 'active' : ''}
-                                onClick={(e) => {
-                                    if (item.action) {
-                                        e.preventDefault();
-                                        handleMenuItemClick(item.action, isMobile);
-                                    } else if (isMobile) {
-                                        closeMobileMenu();
-                                    }
-                                }}
-                            >
-                                {item.label}
-                            </Link>
-                        )}
-                    </li>
-                );
-            })}
+    // Prevent body scroll when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
 
-           
-
-            {/* Location dropdown */}
-            <li className="location-dropdown-container">
-                {renderLocationDropdown(isMobile)}
-            </li>
-
-            <li>
-                <a
-                    href="https://malgudigardenplano.com/blog/"
-                    onClick={() => {
-                        if (isMobile) closeMobileMenu();
-                    }}
-                >
-                    Blog
-                </a>
-            </li>
-
-            {/* Contact */}
-            <li>
-                <Link
-                    to="/"
-                    className={activePage === 'contact' ? 'active' : ''}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleMenuItemClick('contact', isMobile);
-                    }}
-                >
-                    Contact
-                </Link>
-            </li>
-        </ul>
-    );
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
 
     return (
         <>
-            <div className={`header-container ${isSticky ? 'active' : ''}`}>
-                <div className="header-content">
-                    <Link
-                        to="/"
-                        className="header-logo"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
-                        <img src={logo} alt="logo" />
+            <header className="header">
+                <div className="header-container">
+                    <div className="logo-container location30-logo">
+                        <img src={location30} alt="30+ Locations" />
+                    </div>
+                   
+                    {/* Main logo */}
+                    <Link to="/" className="logo-container" onClick={closeMenu}>
+                        <img src={logo} alt="House of Biryanis and Kebabs" />
                     </Link>
 
-                    <div className="header-menu">{renderMenuItems()}</div>
-
-                    <div className="header-mobile">
-                        <a href="https://customerappbeta.web.app/restaurant/malgudi-garden-plano/menu/Pickup" target="_blank" rel="noopener noreferrer" className="btn">
-                            <i className="animation"></i>
-                            <i className="fa-solid fa-cart-shopping"></i>Order Online
-                            <i className="animation"></i>
-                        </a>
+                    
+                    <div className="logo-container halal-logo">
+                        <img src={halal} alt="halal" />
                     </div>
 
-                    <div className="hamburger-container" onClick={toggleMobileMenu}>
-                        <div className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                            <div className="line"></div>
-                            <div className="line"></div>
-                            <div className="line"></div>
+                    <div className="hamburger-menu" onClick={toggleMenu}>
+                        <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Mobile Menu */}
-            {isMobileScreen && (
-                <>
-                    <div
-                        className={`header-menu-mobile-overlay ${isMobileMenuOpen ? 'show' : ''}`}
-                        onClick={closeMobileMenu}
-                    ></div>
-
-                    <div className={`header-menu-mobile ${isMobileMenuOpen ? 'show' : ''}`}>
-                        <div className="header-menu-mobile-content">
-                            <Link to="/" className="header-menu-mobile-logo" onClick={closeMobileMenu}>
-                                <img src={logo} alt="logo" />
-                            </Link>
-
-                            <div className="header-menu-mobile-menu">
-                                {renderMenuItems(true)}
-                            </div>
-
-                            <div className="mobile-social-media">
-                                <a href="mailto:malgudigardentx@gmail.com" className="mail">
-                                    malgudigardentx@gmail.com
-                                </a>
-                                <div className="space-5"></div>
-                                <a href="tel:8008865253" className="mail">
-                                    +1 (800) 886-5253
-                                </a>
-                                <div className="space-5"></div>
-                                <a href="https://maps.app.goo.gl/P6SZUqeAoj7qMSAf7" target="_blank" rel="noreferrer" className="mail">
-                                    5024 Tennyson Pkwy, Suite #200, Plano, TX-75024
-                                </a>
-                                <div className="mobile-social-media-icons">
-                                    <a href="https://www.facebook.com/malgudigarden/" target="_blank" rel="noreferrer">
-                                        <i className="fa-brands fa-facebook"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/malgudigarden/" target="_blank" rel="noreferrer">
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                {/* Mobile Navigation Menu */}
+                <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`} onClick={closeMenu}>
+                    <div className="mobile-nav-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="mobile-nav-close" onClick={closeMenu}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                        <ul className="mobile-nav-list">
+                            <li className="mobile-nav-item">
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) => `mobile-nav-link ${isActive && !isAboutUsActive ? 'active' : ''}`}
+                                    onClick={closeMenu}
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/our-story" className="mobile-nav-link" onClick={closeMenu}>
+                                    Our Story
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/location" className="mobile-nav-link" onClick={closeMenu}>
+                                    Our Location
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/eb5-program" className="mobile-nav-link" onClick={closeMenu}>
+                                    EB5 Program
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/our-brands" className="mobile-nav-link" onClick={closeMenu}>
+                                    Our Brands
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/careers" className="mobile-nav-link" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>
+                                    Careers
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/franchise-enquires" className="mobile-nav-link" onClick={closeMenu}>
+                                    Franchise Enquires
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/event-catering" className="mobile-nav-link" onClick={closeMenu}>
+                                    Event Catering
+                                </NavLink>
+                            </li>
+                            <li className="mobile-nav-item">
+                                <NavLink to="/contact-us" className="mobile-nav-link" onClick={() => { closeMenu(); window.scrollTo(0, 0); }}>
+                                    Contact Us
+                                </NavLink>
+                            </li>
+                            
+                        </ul>
                     </div>
-                </>
-            )}
+                </div>
+
+                <div className="nav-menu-container">
+                    <ul className="nav-menu-list">
+                        <li className="nav-menu-item">
+                            <NavLink
+                                to="/"
+                                className={({ isActive }) => `nav-menu-link ${isActive && !isAboutUsActive ? 'active' : ''}`}
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/our-story" className="nav-menu-link">
+                                Our Story
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/location" className="nav-menu-link">
+                                Our Location
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/eb5-program" className="nav-menu-link">
+                                EB5 Program
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/our-brands" className="nav-menu-link">
+                                Our Brands
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/careers" className="nav-menu-link" onClick={() => window.scrollTo(0, 0)}>
+                                Careers
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/franchise-enquires" className="nav-menu-link">
+                                Franchise Enquires
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/event-catering" className="nav-menu-link">
+                                Event Catering
+                            </NavLink>
+                        </li>
+                        <li className="nav-menu-item">
+                            <NavLink to="/contact-us" className="nav-menu-link" onClick={() => window.scrollTo(0, 0)}>
+                                Contact Us
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </header>
         </>
-    );
-};
+    )
+}
 
 export default Header;
